@@ -3,7 +3,7 @@ const app = express()
 require('dotenv').config()
 const path = require('path')
 
-const port = process.env.PORT
+const port = process.env.PORT || 8080
 const hostname = process.env.HOST_NAME
 
 app.get('/', function (req, res) {
