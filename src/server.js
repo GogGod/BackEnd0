@@ -1,18 +1,18 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const path = require('path')
-require('dotenv').config()
+const configViewEngine = require('./config/viewsEngine')
 
 //config static files
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 //hosting
 const port = process.env.PORT || 8080
 const hostname = process.env.HOST_NAME
 
 //config template engine
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+configViewEngine(app)
 
 //khai báo route
 app.get('/', function (req, res) {
