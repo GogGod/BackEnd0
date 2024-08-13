@@ -11,6 +11,9 @@ const hostname = process.env.HOST_NAME
 //config template engine
 configViewEngine(app)
 
+//Khai báo routes
+app.use("/", webRoutes)
+
 
 
 app.listen(port, hostname)
