@@ -1,5 +1,4 @@
 const getHomepage = (req, res) => {
-    res.send('234')
     res.render('sample.ejs')
 }
 
